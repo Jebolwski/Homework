@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tam Bölenleri Yazdırma</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        body {
+            background-color: rgb(112, 112, 112);
+        }
+        
+        .container {
+            height: 230px;
+            background-color: rgb(131, 131, 131);
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 80px;
+            animation: container 1s linear;
+        }
+        
+        h2 {
+            padding-top: 20px;
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            width: 230px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            margin-top: 30px;
+        }
+        
+        input {
+            margin-top: 25px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            border: 1px solid black;
+            border-radius: 10%;
+        }
+        
+        button {
+            margin-top: 10px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 10px;
+            border-radius: 10%;
+            background-color: gray;
+            border: 2px solid white;
+            color: white;
+            transition: 0.2s;
+            width: 150px;
+            font-weight: 600;
+        }
+        
+        button:hover {
+            background-color: rgb(85, 85, 85);
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 3px -3px 3px -3px rgb(90, 90, 90)
+        }
+        
+        @keyframes container {
+            from {
+                margin-top: -100%;
+                transform: rotateZ(180deg);
+            }
+            to {
+                margin-top: 80px;
+                transform: rotateZ(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Tam Bölen Bulucu</h2>
+        <input type="text">
+        <h1></h1>
+        <button onclick="tambolen()">Tam Bölenleri Bul</button>
+    </div>
+
+
+    <script>
+        const tambolen = () => {
+            let i = 0;
+            let h1 = document.querySelector("h1");
+            let input = document.querySelector("input");
+            let array = [];
+            if (input.value <= "0") {
+                h1.innerHTML = "Enter a Bigger Number";
+                input.value = "";
+            } else {
+                for (i = 0; i <= input.value; i++) {
+                    if (input.value % i == "0") {
+                        array.push(i);
+                        h1.innerHTML = array;
+                        console.log(h1.innerHTML);
+
+                    }
+
+                }
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>
