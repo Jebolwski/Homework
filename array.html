@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let n = prompt("Enter 'N' : ");
+        array1 = [null];
+        array2 = [null];
+        for (var i = 0; i <= n; i++) {
+            array1[i] = prompt(`Dizinin ${i}. satır ${j}.sütununu girin : `)
+            for (var j = 0; j <= i; j++) {
+                array1[i][j] = prompt(`Dizinin ${i}. satır ${j}.sütununu girin : `)
+                console.log("geçti");
+            }
+        }
+        console.log(array1);
+    </script>
+</body>
+
+</html>
